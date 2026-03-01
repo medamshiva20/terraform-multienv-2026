@@ -4,7 +4,7 @@ data "aws_ami" "sivadevops"{
 
     filter {
         name = "name"
-        values = "Siva-AMI"
+        values = ["Siva-AMI"]
     }
 
     filter {
@@ -13,7 +13,7 @@ data "aws_ami" "sivadevops"{
     }
 
     filter{
-        name = "virtulization-type"
+        name = "virtualization-type"
         values = ["hvm"]
     }
 }
