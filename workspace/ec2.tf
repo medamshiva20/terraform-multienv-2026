@@ -1,6 +1,6 @@
 resource "aws_instance" "multienv"{
     ami = local.ami_id
-    instance_type = lookup(var.instance_type,local.environment)
+    instance_type = lookup(var.instance_type,local.environment) #finds value from the map using the key
     vpc_security_group_ids = [aws_security_group.allow-tls.id]
 
     tags = {
@@ -26,7 +26,6 @@ resource "aws_security_group" "allow-tls"{
         to_port = 0
         protocol = "-1"
         cidr_blocks = ["0.0.0.0/0"]
-
     }
 
     tags ={
