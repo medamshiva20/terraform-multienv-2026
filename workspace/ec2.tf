@@ -32,3 +32,8 @@ resource "aws_security_group" "allow-tls"{
         Name = "allow-all-terraform-${local.environment}"
     }
 }
+
+#Recommended sequence
+#terraform init
+#terraform workspace select prod
+#terraform apply -auto-approve
